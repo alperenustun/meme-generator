@@ -2,6 +2,8 @@
 
 This project was created for tutorial purposes.
 
+### For the project: https://imaginative-bubblegum-d6ebfd.netlify.app/
+
 In the project directory, you can run:
 
 ### `npm install`
