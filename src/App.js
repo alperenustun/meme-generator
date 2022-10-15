@@ -8,7 +8,7 @@ function clickIt(event){
 
 function App() {
   return (
-    <div onClick={clickIt}>
+    <div className='wrapper' onClick={clickIt}>
       <Header />
       <Meme />
     </div>
