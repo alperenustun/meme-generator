@@ -1,5 +1,4 @@
 import React from "react";
-import memesData from "../memesData.js"
 
 export default function Meme (){
 
@@ -9,7 +8,13 @@ export default function Meme (){
         bottomText: '',
         randomImage: ''
     })
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+    const [allMemeImages, setAllMemes] = React.useState([]);
+
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data))
+    }, []);
 
     function handleGenerateClick(){
         const memesArray = allMemeImages.data.memes;
@@ -28,10 +33,6 @@ export default function Meme (){
             [name]: value
         }));
     }
-
-    fetch("https://swapi.dev/api/people/1")
-        .then(res => res.json())
-        .then(data => console.log(data))
 
     return(
         <main>
